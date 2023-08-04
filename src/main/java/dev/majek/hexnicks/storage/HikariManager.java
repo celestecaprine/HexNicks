@@ -45,12 +45,13 @@ public class HikariManager {
         String database = HexNicks.core().getConfig().getString("database", "");
         String username = HexNicks.core().getConfig().getString("username", "");
         String password = HexNicks.core().getConfig().getString("password", "");
+        String extraArgs = HexNicks.core().getConfig().getString("extra-sql-args", "");
         boolean useSSL = HexNicks.core().getConfig().getBoolean("use-ssl", false);
         boolean autoReconnect = HexNicks.core().getConfig().getBoolean("auto-reconnect", false);
         long maxLifetime = HexNicks.core().getConfig().getLong("max-lifetime", 300000L);
 
         config.setJdbcUrl("jdbc:mysql://" + host + ":" + port + "/" + database + "?useSSL=" + useSSL
-                + "&autoReconnect=" + autoReconnect);
+                + "&autoReconnect=" + autoReconnect + extraArgs);
         config.setUsername(username);
         config.setPassword(password);
         config.setMaximumPoolSize(20);

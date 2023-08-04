@@ -77,6 +77,8 @@ auto-reconnect: false
 max-lifetime: 300000
 # This is the time, in seconds, for how often the plugin should check the database for updated nicknames.
 update-interval: 300
+# Extra arguments to add to the SQL URL. (ex. '&allowPublicKeyRetrieval=true')
+extra-sql-args: ''
 
 # This should only be enabled if the developer needs additional information about plugin issues
 debug: false
